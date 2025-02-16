@@ -1,0 +1,12 @@
+<h2>Rectangle Creator</h2>
+<p>Count: <input id="count" type="number" value="5" /></p>
+<button id="create">Export</button>
+
+<script>
+  document.getElementById("create").onclick = () => {
+    // const textbox = document.getElementById('count');
+    // const count = parseInt(textbox.value, 10);
+    // parent.postMessage({ pluginMessage: { type: 'create-shapes' } }, '*')
+    parent.postMessage({ pluginMessage: { type: "export" } }, "*");
+  };
+</script>
