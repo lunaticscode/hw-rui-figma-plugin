@@ -6,13 +6,11 @@
   "capabilities": [],
   "enableProposedApi": false,
   "documentAccess": "dynamic-page",
-  "editorType": [
-    "figma"
-  ],
+  "editorType": ["figma"],
   "ui": "ui.html",
+
   "networkAccess": {
-    "allowedDomains": [
-      "none"
-    ]
+    "allowedDomains": ["https://hw-rui-server.vercel.app"],
+    "devAllowedDomains": ["http://localhost:8088"]
   }
 }

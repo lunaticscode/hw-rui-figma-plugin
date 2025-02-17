@@ -29,6 +29,31 @@ figma.ui.onmessage = async (msg: { type: string; count: number }) => {
       }
     }
 
-    console.log(resultObj);
+    const saveRequest = await fetch(
+      "http://localhost:8088/api/figma/save-variables",
+      {
+        method: "POST",
+        body: JSON.stringify(resultObj),
+        headers: {
+          "Content-Type": "application/json",
+          "hw-rui-token": "hw-rui-server-test",
+        },
+      }
+    );
+
+    if (saveRequest.ok) {
+      const response = await saveRequest.json();
+      console.log(response);
+    }
+    /**
+     {
+       "color/cobalt/100": "#d5dbfa",
+       "color/cobalt/200": "#abb6f5",
+       "color/cobalt/300": "#8293f2",
+       "color/cobalt/400": "#586eed",
+       "color/cobalt/500": "#4253b2",
+       "color/cobalt/600": "#2c3776"
+     }
+     */
   }
 };
